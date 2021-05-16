@@ -5,26 +5,7 @@ const { Student, Campus } = require('../database/models');
 //so we don't have to use try-catch for each request handler
 const ash = require('express-async-handler');
 
-/** GET ALL STUDENTS: then/catch */
-// router.get('/', function(req, res, next) {
-//   Student.findAll({include: [Campus]})
-//     .then(students => res.status(200).json(students))
-//     .catch(err => next(err));
-// });
-
-/** GET ALL STUDENTS: async/await */
-// router.get('/', async (req, res, next) => {
-//   try {
-//     let students = await Student.findAll({include: [Campus]});
-//     res.status(200).json(students);
-//   } catch(err) {
-//     next(err);
-//   }
-// });
-
-/** GET ALL STUDENTS: express-async-handler (ash) */
-// automatically catches any error and sends to middleware
-// same as using try/catch and calling next(error)
+/**  GET ALL STUDENTS */
 router.get('/', ash(async(req, res) => {
   let students = await Student.findAll({include: [Campus]});
   res.status(200).json(students);
@@ -54,7 +35,7 @@ router.delete('/:id', function(req, res, next) {
     .catch(err => next(err));
 });
 
-/******************* EDIT *********************/
+/** EDIT A CAMPUS **/
 
 router.put('/:id', ash(async(req, res) => {
   await Student.update(req.body,
