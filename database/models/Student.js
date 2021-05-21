@@ -30,7 +30,7 @@ const Student = db.define('student', {
     imageUrl: {
         type: Sequelize.STRING,
         defaultValue:
-            'https://www.flaticon.com/svg/vstatic/svg/194/194931.svg?token=exp=1620699950~hmac=913a21c60bee24ef5fe276b69859ecff',
+        "https://img.icons8.com/pastel-glyph/2x/person-male.png",
     },
 
     gpa: {

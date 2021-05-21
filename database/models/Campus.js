@@ -14,7 +14,7 @@ const Campus = db.define('campus', {
     imageUrl: {
         type: Sequelize.STRING,
         defaultValue:
-            'https://www.flaticon.com/svg/vstatic/svg/3315/3315761.svg?token=exp=1620698998~hmac=c963694631776a276112d071b52136b2',
+            'https://static.vecteezy.com/system/resources/thumbnails/000/363/064/small/5_-_1_-_School.jpg',
     },
 
     address: {
